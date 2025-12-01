@@ -29,8 +29,22 @@ public class ContatoRepository {
    }
 
    public void exibirContato() {
+       //formas de pegar o dados e imprimir no terminal
+
+
        try {
            List<String> linhas =Files.readAllLines(arquivo);
+           for(String linha : linhas) {
+               String[] linhaContato = linha.split(";");
+               System.out.println("/////////////////////////////////////");
+               System.out.println("NOME: "+linhaContato[1]);
+               System.out.println("TELEFONE: "+linhaContato[2]);
+               System.out.println("EMAIL: "+linhaContato[3]);
+               System.out.println("/////////////////////////////////////");
+
+               System.out.println(linha);
+           }
+           /*
            int cont = 0;
            while (cont < linhas.size()){
 
@@ -38,7 +52,7 @@ public class ContatoRepository {
                cont++;
 
 
-           }
+           }*/
 
 
        } catch (IOException e) {
